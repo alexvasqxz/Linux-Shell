@@ -7,6 +7,10 @@
 //  creating a total of 10,000 points where each thread 
 //  works (10,000/number of threads) points
 //
+//  The following file contains a graph representing the
+//  relation for each number of used threads and their time
+//  https://drive.google.com/file/d/1Qu2zzU4c3RKTcOpdSE8JILnUeW7xdusS/view?usp=sharing 
+//
 //   Created on 9/27/20
 //   Copyright © 2020 Gustavo Vasquez. All rights reserved
 //
