@@ -31,14 +31,14 @@
  #include <stdint.h>
 
  pthread_mutex_t mutex;
- int milkBottles = 30;
+ int milkBottles = 1000;
  int sellers = 5;
- int miniSellers = 5;
-int bottles1 = 6;
-int bottles2 = 6;
-int bottles3 = 6;
-int bottles4 = 6;
-int bottles5 = 6;
+ int miniSellers = 200;
+int bottles1 = 200;
+int bottles2 = 200;
+int bottles3 = 200;
+int bottles4 = 200;
+int bottles5 = 200;
 
  /*
  *   Calls sellmilk(), and activate/desactivate mutex whenever there is someone selling
@@ -120,7 +120,7 @@ int bottles5 = 6;
  }
 
  int main(void){
-     pthread_mutex_init(&mutex, NULL);                               /* Initialize mutex with no attr, see more in man pthread_mutex_destoy */
+     pthread_mutex_init(&mutex, NULL);                               
      pthread_t thread[sellers];
 
      int i;
