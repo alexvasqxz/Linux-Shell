@@ -32,7 +32,9 @@
   #include <time.h>
 
   pthread_mutex_t mutex;
+  // Total of bottles of Milk
   int milkBottles = 1000;
+  // Total of sellers
   int sellers = 5;
   int sellerBottles[5] = {200,200,200,200,200};
   int countSeller[5] = {1,1,1,1,1};
@@ -42,11 +44,14 @@
      intptr_t t_id = (intptr_t) i;
      
      for (;;){
-
+     
+	  // If we still have bottles of milk in total or for the assigned seller
          if (milkBottles > 0 && countSeller[t_id] <= 5){
              int upper = sellerBottles[t_id];
+             // get a random number in the range of [0 - remaining bottless per seller]
              num = (rand() % (upper - 0 + 1));
              
+             // Substract the number to the bottles per seller and total bottles
              sellerBottles[t_id] -= num;
              milkBottles -= num;
              
@@ -55,6 +60,8 @@
              
              pthread_mutex_unlock(&mutex);
          }
+         
+         // If we don't have milk bottles in total or for the seller
          else{
              printf("Seller %zd has no more bottles to seel today, come back tomorrow\n", t_id+1);
              pthread_mutex_unlock(&mutex);
